@@ -22,5 +22,5 @@ Add the follow line to your appsettings.json
 This configuration will follow the Eventstore documentation that suggest this instance as Singleton.
 
 ```c#
-services.addSingleton<IEventStoreService, EventStoreService>();
+services.AddSingleton<IEventStoreService, EventStoreService>();
 ```
