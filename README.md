@@ -11,7 +11,7 @@ This project will be use to implement event store to an specific bounded context
 Add the follow line to your appsettings.json
 ```json
 {
-    "ConnectionStrings:{
+    "ConnectionStrings":{
         "EventStoreConnection": "ConnectTo: tcp://admin:yourpassword@localhost:1113; HeartBeatTimeout=500"
     }
 }
