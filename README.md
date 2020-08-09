@@ -12,7 +12,7 @@ Add the follow line to your appsettings.json
 ```json
 {
     "ConnectionStrings:{
-        "EventStoreConnection: "ConnectTo: tcp://admin:yourpassword@localhost:1113; HeartBeatTimeout=500"
+        "EventStoreConnection": "ConnectTo: tcp://admin:yourpassword@localhost:1113; HeartBeatTimeout=500"
     }
 }
 ```
