@@ -11,8 +11,8 @@ This project will be use to implement event store to an specific bounded context
 Add the follow line to your appsettings.json
 ```json
 {
-    "ConnectionStrings:{
-        "EventStoreConnection: "ConnectTo: tcp://admin:yourpassword@localhost:1113; HeartBeatTimeout=500"
+    "ConnectionStrings":{
+        "EventStoreConnection": "ConnectTo: tcp://admin:yourpassword@localhost:1113; HeartBeatTimeout=500"
     }
 }
 ```
@@ -22,5 +22,5 @@ Add the follow line to your appsettings.json
 This configuration will follow the Eventstore documentation that suggest this instance as Singleton.
 
 ```c#
-services.addSingleton<IEventStoreService, EventStoreService>();
+services.AddSingleton<IEventStoreService, EventStoreService>();
 ```
