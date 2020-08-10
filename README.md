@@ -1,5 +1,5 @@
 # Hydra Eventsourcing
-This project will be use to implement event store to an specific bounded context by using mediator.
+This project will be used to implement event store to an specific bounded context by using mediator.
 
 ### Package references:
 ```EventStore.Client```
