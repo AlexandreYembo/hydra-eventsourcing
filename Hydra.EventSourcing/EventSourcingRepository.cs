@@ -39,25 +39,25 @@ namespace Hydra.EventSourcing
                 var dataEncoded = Encoding.UTF8.GetString(resolvedEvent.Event.Data);
                 var jsonData = JsonConvert.DeserializeObject<BaseEvent>(dataEncoded);
 
-                var evento = new StoredEvent(
+                var tEvent = new StoredEvent(
                     resolvedEvent.Event.EventId,
                     resolvedEvent.Event.EventType,
                     jsonData.Timestamp,
                     dataEncoded);
 
-                listEvents.Add(evento);
+                listEvents.Add(tEvent);
             }
 
             return listEvents.OrderBy(e => e.EventDate);
         }
 
-        private static IEnumerable<EventData> FormatEvent<TEvent>(TEvent evento) where TEvent : Event
+        private static IEnumerable<EventData> FormatEvent<TEvent>(TEvent tEvent) where TEvent : Event
         {
             yield return new EventData(
                 Guid.NewGuid(),
-                evento.MessageType,
+                tEvent.MessageType,
                 true,
-                Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(evento)),
+                Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(tEvent)),
                 null);
         }
     }
