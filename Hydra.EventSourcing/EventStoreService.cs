@@ -9,8 +9,11 @@ namespace Hydra.EventSourcing
         
         public EventStoreService(IConfiguration configuration)
         {
-            _connection = EventStoreConnection.Create(configuration.GetConnectionString("EventStoreConnection"));
-            _connection.ConnectAsync();
+            var eventSourcingEnabled = bool.Parse(configuration.GetSection("EnableEventSourcing").Value);
+            if(eventSourcingEnabled){
+                _connection = EventStoreConnection.Create(configuration.GetConnectionString("EventStoreConnection"));
+                _connection.ConnectAsync();
+            }
         }
 
         public IEventStoreConnection GetConnection() => _connection;
