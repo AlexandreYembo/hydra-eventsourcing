@@ -19,7 +19,7 @@ Add the follow line to your appsettings.json
 
 
 ### Register Dependency Injection to your project
-This configuration will follow the Eventstore documentation that suggest this instance as Singleton.
+This configuration follows the Eventstore documentation that suggest this instance as Singleton.
 
 ```c#
 services.AddSingleton<IEventStoreService, EventStoreService>();
