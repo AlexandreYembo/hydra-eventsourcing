@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EventStore.ClientAPI;
-using Hydra.Core.Data.EventSourcing;
-using Hydra.Core.Messages;
+using Hydra.Core.Mediator.Messages;
+using Hydra.EventSourcing.Data;
+using Hydra.EventSourcing.Models;
 using Newtonsoft.Json;
 
 namespace Hydra.EventSourcing

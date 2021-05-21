@@ -5,12 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EventStore.Client" Version="20.6.0" />
+    <PackageReference Include="EventStore.Client" Version="21.2.0" />
+    <PackageReference Include="Hydra.Core.Mediator" Version="1.0.0-beta-210520.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.6" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\hydra-core\Hydra.Core\Hydra.Core.csproj" />
   </ItemGroup>
 
 </Project>
