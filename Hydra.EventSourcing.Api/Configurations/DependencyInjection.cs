@@ -1,8 +1,8 @@
 using Hydra.Core.API.User;
 using Hydra.Core.Mediator.Abstractions.Mediator;
 using Hydra.Core.Mediator.Communication;
-using Hydra.Core.Mediator.Integration;
-using Hydra.Core.MessageBus.LogEventsIntegrations;
+using Hydra.EventSourcing.Infrastructure;
+using Hydra.EventSourcing.Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,17 +15,12 @@ namespace Hydra.EventSourcing.Api.Configurations
              //API
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IAspNetUser, AspNetUser>();
+
+             // Event Sourcing
+            services.AddSingleton<IEventStoreProvider, EventStoreProvider>();
+            services.AddSingleton<IEventSourcingRepository, EventSourcingRepository>();
             
-            //DI for Mediator
-            // services.AddScoped<IDispatchLogEventToBus, DispatchLogEventToBus>();
-            // services.AddScoped<IMediatorHandler, MediatorHandler>();
-
-            //DI for commands
-            // services.AddScoped<IRequestHandler<SaveCustomerCommand, ValidationResult>, CustomerCommandHandler>();
-
-            //DI for Repository
-            // services.AddScoped<ICustomerRepository, CustomerRepository>();
-            // services.AddScoped<CustomersContext>();
+            services.AddScoped<IMediatorHandler, MediatorHandler>();
         }
     }
 }

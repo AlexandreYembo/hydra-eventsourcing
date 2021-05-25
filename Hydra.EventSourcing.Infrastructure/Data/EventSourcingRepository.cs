@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EventStore.ClientAPI;
+using Hydra.Core.Mediator.Integration;
 using Hydra.Core.Mediator.Messages;
-using Hydra.EventSourcing.Data;
-using Hydra.EventSourcing.Models;
+using Hydra.EventSourcing.Infrastructure.Models;
 using Newtonsoft.Json;
 
-namespace Hydra.EventSourcing
+namespace Hydra.EventSourcing.Infrastructure.Data
 {
     public class EventSourcingRepository : IEventSourcingRepository
     {
-        private readonly IEventStoreService _eventStoreService;
+        private readonly IEventStoreProvider _eventStoreProvider;
 
-        public EventSourcingRepository(IEventStoreService eventStoreService)
+        public EventSourcingRepository(IEventStoreProvider eventStoreProvider)
         {
-            _eventStoreService = eventStoreService;
+            _eventStoreProvider = eventStoreProvider;
         }
 
-        public async Task SaveEvent<TEvent>(TEvent tEvent) where TEvent : Event
+        public async Task SaveEvent(CreateEventSourcingIntegrationEvent tEvent)
         {
-            await _eventStoreService.GetConnection().AppendToStreamAsync(
+            await _eventStoreProvider.GetConnection().AppendToStreamAsync(
                 tEvent.AggregateId.ToString(),
                 ExpectedVersion.Any,
                 FormatEvent(tEvent));
@@ -30,7 +30,7 @@ namespace Hydra.EventSourcing
 
         public async Task<IEnumerable<StoredEvent>> GetEvents(Guid aggregateId)
         {
-            var events = await _eventStoreService.GetConnection()
+            var events = await _eventStoreProvider.GetConnection()
                 .ReadStreamEventsForwardAsync(aggregateId.ToString(), 0, 500, false);
 
             var listEvents = new List<StoredEvent>();
@@ -52,13 +52,13 @@ namespace Hydra.EventSourcing
             return listEvents.OrderBy(e => e.EventDate);
         }
 
-        private static IEnumerable<EventData> FormatEvent<TEvent>(TEvent tEvent) where TEvent : Event
+        private static IEnumerable<EventData> FormatEvent<TEvent>(TEvent tEvent) where TEvent : CreateEventSourcingIntegrationEvent
         {
             yield return new EventData(
                 Guid.NewGuid(),
                 tEvent.MessageType,
                 true,
-                Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(tEvent)),
+                Encoding.UTF8.GetBytes(tEvent.Entity),
                 null);
         }
     }

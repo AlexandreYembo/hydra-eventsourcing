@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Hydra.Core.Mediator.Messages;
-using Hydra.EventSourcing.Models;
+using Hydra.Core.Mediator.Integration;
+using Hydra.EventSourcing.Infrastructure.Models;
 
-namespace Hydra.EventSourcing.Data
+namespace Hydra.EventSourcing.Infrastructure.Data
 {
    public interface IEventSourcingRepository
     {
-         Task SaveEvent<TEvent>(TEvent tEvent) where TEvent : Event;
+         Task SaveEvent(CreateEventSourcingIntegrationEvent tEvent);
          Task<IEnumerable<StoredEvent>> GetEvents(Guid aggregateId);
     }
 }

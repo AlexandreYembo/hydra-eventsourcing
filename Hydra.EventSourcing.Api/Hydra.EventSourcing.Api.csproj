@@ -3,11 +3,14 @@
  <ItemGroup>
     <PackageReference Include="automapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
-    <PackageReference Include="Hydra.Core.Mediator" Version="1.0.0-beta-210520.2" />
-    <PackageReference Include="Hydra.Core.API" Version="1.0.0-beta-210520.1" />
+    <PackageReference Include="Hydra.Core.API" Version="1.1.0-stage1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
+
+ <ItemGroup>
+   <ProjectReference Include="..\Hydra.EventSourcing.Infrastructure\Hydra.EventSourcing.Infrastructure.csproj" />
+ </ItemGroup>
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>

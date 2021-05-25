@@ -1,6 +1,6 @@
 using System;
 
-namespace Hydra.EventSourcing.Models
+namespace Hydra.EventSourcing.Infrastructure.Models
 {
      /// <summary>
     /// Format of the event you will stored

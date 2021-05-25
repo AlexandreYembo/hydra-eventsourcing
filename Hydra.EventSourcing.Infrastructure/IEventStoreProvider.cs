@@ -1,8 +1,8 @@
 using EventStore.ClientAPI;
 
-namespace Hydra.EventSourcing
+namespace Hydra.EventSourcing.Infrastructure
 {
-    public interface IEventStoreService
+    public interface IEventStoreProvider
     {
          IEventStoreConnection GetConnection();
     }
