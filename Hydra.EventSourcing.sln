@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydra.Core", "hydra-core\Hydra.Core\Hydra.Core.csproj", "{AA2A4142-CCBA-4207-8907-8109597BBCC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydra.EventSourcing.Infrastructure", "Hydra.EventSourcing.Infrastructure\Hydra.EventSourcing.Infrastructure.csproj", "{934EEDD9-B5EA-4B66-A96D-0FAFF1464B23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydra.EventSourcing", "Hydra.EventSourcing\Hydra.EventSourcing.csproj", "{934EEDD9-B5EA-4B66-A96D-0FAFF1464B23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydra.EventSourcing.Api", "Hydra.EventSourcing.Api\Hydra.EventSourcing.Api.csproj", "{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,18 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Debug|x64.Build.0 = Debug|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Debug|x86.Build.0 = Debug|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Release|x64.ActiveCfg = Release|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Release|x64.Build.0 = Release|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Release|x86.ActiveCfg = Release|Any CPU
-		{AA2A4142-CCBA-4207-8907-8109597BBCC8}.Release|x86.Build.0 = Release|Any CPU
 		{934EEDD9-B5EA-4B66-A96D-0FAFF1464B23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{934EEDD9-B5EA-4B66-A96D-0FAFF1464B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{934EEDD9-B5EA-4B66-A96D-0FAFF1464B23}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -44,6 +32,18 @@ Global
 		{934EEDD9-B5EA-4B66-A96D-0FAFF1464B23}.Release|x64.Build.0 = Release|Any CPU
 		{934EEDD9-B5EA-4B66-A96D-0FAFF1464B23}.Release|x86.ActiveCfg = Release|Any CPU
 		{934EEDD9-B5EA-4B66-A96D-0FAFF1464B23}.Release|x86.Build.0 = Release|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Debug|x64.Build.0 = Debug|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Debug|x86.Build.0 = Debug|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Release|x64.ActiveCfg = Release|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Release|x64.Build.0 = Release|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Release|x86.ActiveCfg = Release|Any CPU
+		{0BA5E656-0DEA-4B05-93C6-29FEDF5A5478}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
