@@ -34,6 +34,9 @@ namespace Hydra.EventSourcing.Api.Services
         {
             using var scope = _serviceProvider.CreateScope();
             var eventSourcingRepository = scope.ServiceProvider.GetRequiredService<IEventSourcingRepository>();
+
+            if(message.AggregateId == default(Guid)) return;
+            
             await eventSourcingRepository.SaveEvent(message);
         }
     }
